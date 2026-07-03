@@ -8,7 +8,7 @@
       "url": "https://github.com/mjjdr946-sketch"
     }
   ],
-  "version": "1.0.0",
+  "version": "1.0.4",
   "compatibility": {
     "minimum": "14",
     "verified": "14.363"
@@ -37,7 +37,7 @@
   ],
   "url": "https://github.com/mjjdr946-sketch/otherscape-pack1",
   "manifest": "https://raw.githubusercontent.com/mjjdr946-sketch/otherscape-pack1/main/module.json",
-  "download": "https://github.com/mjjdr946-sketch/otherscape-pack1/archive/refs/tags/v1.0.0.zip",
+  "download": "https://github.com/mjjdr946-sketch/otherscape-pack1/archive/refs/tags/v1.0.4.zip",
   "flags": {
     "attachable": true
   }
