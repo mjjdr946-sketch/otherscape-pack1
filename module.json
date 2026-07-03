@@ -1,10 +1,11 @@
 {
   "id": "otherscape-pack1",
   "title": "Otherscape — Pack 1 (MST-SCA005)",
-  "description": "10 personnages pré-tirés du Character Pack 1 Otherscape (MST-SCA005), en français. Compatible Foundry VTT v14 / système city-of-mist v4.5.1.",
+  "description": "10 personnages pré-tirés du Character Pack 1 Otherscape (MST-SCA005), en français. Compatible Foundry VTT v14 / système city-of-mist v4.5.1. Contient les portraits et tokens pour chaque personnage.",
   "authors": [
     {
-      "name": "NunnuN"
+      "name": "NunnuN",
+      "url": "https://github.com/mjjdr946-sketch"
     }
   ],
   "version": "1.0.0",
@@ -34,7 +35,10 @@
       "flags": {}
     }
   ],
-  "url": "",
-  "manifest": "",
-  "download": ""
+  "url": "https://github.com/mjjdr946-sketch/otherscape-pack1",
+  "manifest": "https://raw.githubusercontent.com/mjjdr946-sketch/otherscape-pack1/main/module.json",
+  "download": "https://github.com/mjjdr946-sketch/otherscape-pack1/archive/refs/tags/v1.0.0.zip",
+  "flags": {
+    "attachable": true
+  }
 }
