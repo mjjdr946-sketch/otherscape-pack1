@@ -8,9 +8,9 @@
       "url": "https://github.com/mjjdr946-sketch"
     }
   ],
-  "version": "1.2.1",
+  "version": "1.2.2",
   "compatibility": {
-    "minimum": "14",
+    "minimum": "14.0.0",
     "verified": "14.363"
   },
   "relationships": {
@@ -31,13 +31,12 @@
       "label": "Personnages Otherscape (24)",
       "path": "packs/actors.db",
       "type": "Actor",
-      "system": "city-of-mist",
-      "flags": {}
+      "system": "city-of-mist"
     }
   ],
   "url": "https://github.com/mjjdr946-sketch/otherscape-pack1",
   "manifest": "https://raw.githubusercontent.com/mjjdr946-sketch/otherscape-pack1/main/module.json",
-  "download": "https://github.com/mjjdr946-sketch/otherscape-pack1/archive/refs/tags/v1.2.1.zip",
+  "download": "https://github.com/mjjdr946-sketch/otherscape-pack1/archive/refs/tags/1.2.2.zip",
   "flags": {
     "attachable": true
   }
