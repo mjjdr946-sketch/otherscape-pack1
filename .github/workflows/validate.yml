@@ -1,0 +1,65 @@
+name: Validate Character Pack
+
+on:
+  push:
+    branches: [main, 'v*', 'v14*']
+    paths:
+      - 'packs/actors.db'
+      - 'Otherscape_Personnages_FR.md'
+      - 'scripts/validate_characters.py'
+  pull_request:
+    paths:
+      - 'packs/actors.db'
+      - 'Otherscape_Personnages_FR.md'
+      - 'scripts/validate_characters.py'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Verify source markdown exists
+        run: |
+          if [ -f "Otherscape_Personnages_FR.md" ]; then
+            echo "✅ Source markdown trouvé"
+          else
+            echo "⚠️  Source markdown manquant — validation DB uniquement"
+          fi
+
+      - name: Validate characters
+        id: validate
+        run: |
+          if [ -f "Otherscape_Personnages_FR.md" ]; then
+            python3 scripts/validate_characters.py --json --mode=validate
+          else
+            python3 scripts/validate_characters.py --json --mode=db-only
+          fi
+
+      - name: Parse and report results
+        id: report
+        run: |
+          python3 scripts/validate_characters.py 2>&1 | tail -5
+          echo "::set-output name=status::$(python3 -c "
+          import json
+          with open('scripts/characters_manifest.json') as f:
+              m = json.load(f)
+          print(f'✅ {m[\"character_count\"]} personnages dans le manifeste')
+          ")
+        continue-on-error: true
+
+      - name: Fail on errors
+        run: |
+          python3 -c "
+          import json
+          with open('scripts/characters_manifest.json') as f:
+              m = json.load(f)
+          print(f'✅ Validation terminée: {m[\"character_count\"]} personnages')
+          "

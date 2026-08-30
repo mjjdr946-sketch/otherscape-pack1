@@ -1,0 +1,11 @@
+# Généré par le validateur — ne pas commiter
+scripts/characters_manifest.json
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+.venv/
